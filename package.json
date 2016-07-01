@@ -1,0 +1,15 @@
+{
+  "name": "roguemoji",
+  "version": "0.0.1",
+  "description": "roguelike + emojis",
+  "main": "bundle.js",
+  "dependencies": {
+    "emojione": "^2.2.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rachel mcgough",
+  "license": "ISC"
+}

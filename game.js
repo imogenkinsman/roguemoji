@@ -3,31 +3,46 @@ emojione = require('emojione');
 // const character = emojione.toImage(':grinning:');
 // document.getElementById('game').innerHTML = character;
 
+class PlayerCharacter {
+  constructor() {
+    this.y = 3;
+    this.x = 3;
+  }
+}
+
+character = new PlayerCharacter;
+
 window.onkeyup = function(e) {
   switch(e.keyCode) {
     case 37:
-      console.log('pressed left');
+      character.x = character.x - 1;
+      draw(character);
       break;
     case 38:
-      console.log('pressed up');
+      character.y = character.y - 1;
+      draw(character);
       break;
     case 39:
-      console.log('pressed right');
+      character.x = character.x + 1;
+      draw(character);
       break;
     case 40:
-      console.log('pressed down');
+      character.y = character.y + 1;
+      draw(character);
       break;
   }
 }
 
-const draw = function() {
+const draw = function(char) {
   let content = ""
   const width = 7;
   const height = 7;
 
   for (i = 0; i <= width; i++) {
     for (j = 0; j <= height; j++) {
-      if (i == 0 && j == height) {
+      if (i == char.y && j == char.x) {
+        content = content + '@';
+      } else if (i == 0 && j == height) {
         content = content + '#<br>';
       } else if (i == 0 || j == 0 ) {
         content = content + '#';
@@ -43,4 +58,4 @@ const draw = function() {
   document.getElementById('game').innerHTML = content;
 };
 
-draw();
+draw(character);

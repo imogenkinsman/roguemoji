@@ -21,12 +21,25 @@ window.onkeyup = function(e) {
 }
 
 const draw = function() {
-  let content = "##### \
-  <br> #...# \
-  <br> #...# \
-  <br> #...# \
-  <br> #...# \
-  <br> #####";
+  let content = ""
+  const width = 7;
+  const height = 7;
+
+  for (i = 0; i <= width; i++) {
+    for (j = 0; j <= height; j++) {
+      if (i == 0 && j == height) {
+        content = content + '#<br>';
+      } else if (i == 0 || j == 0 ) {
+        content = content + '#';
+      } else if (i == width) {
+        content = content + '#';
+      } else if (j == height) {
+        content = content + '#<br>';
+      } else {
+        content = content + '.';
+      }
+    }
+  }
   document.getElementById('game').innerHTML = content;
 };
 

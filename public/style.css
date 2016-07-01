@@ -1,0 +1,7 @@
+body {
+  display: inline-block;
+  text-align: left;
+  font-family: inconsolata, monospace;
+  margin: 0;
+  line-height: 100%;
+}

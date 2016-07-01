@@ -1,7 +1,7 @@
 emojione = require('emojione');
 
-const character = emojione.toImage(':grinning:');
-document.getElementById('game').innerHTML = character;
+// const character = emojione.toImage(':grinning:');
+// document.getElementById('game').innerHTML = character;
 
 window.onkeyup = function(e) {
   switch(e.keyCode) {
@@ -19,3 +19,15 @@ window.onkeyup = function(e) {
       break;
   }
 }
+
+const draw = function() {
+  let content = "##### \
+  <br> #...# \
+  <br> #...# \
+  <br> #...# \
+  <br> #...# \
+  <br> #####";
+  document.getElementById('game').innerHTML = content;
+};
+
+draw();

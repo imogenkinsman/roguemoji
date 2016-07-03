@@ -16,19 +16,19 @@ window.onkeyup = function(e) {
   switch(e.keyCode) {
     case 37:
       character.x = character.x - 1;
-      draw(character);
+      draw();
       break;
     case 38:
       character.y = character.y - 1;
-      draw(character);
+      draw();
       break;
     case 39:
       character.x = character.x + 1;
-      draw(character);
+      draw();
       break;
     case 40:
       character.y = character.y + 1;
-      draw(character);
+      draw();
       break;
   }
 }
@@ -40,11 +40,9 @@ const draw = function(char) {
 
   for (i = 0; i <= width; i++) {
     for (j = 0; j <= height; j++) {
-      if (i == char.y && j == char.x) {
+      if (i == character.y && j == character.x) {
         content = content + '@';
-      } else if (i == 0 || j == 0 ) {
-        content = content + '#';
-      } else if (i == width || j == height) {
+      } else if (i == width || j == height || i == 0 || j == 0) {
         content = content + '#';
       } else {
         content = content + '.';
@@ -58,4 +56,4 @@ const draw = function(char) {
   document.getElementById('game').innerHTML = content;
 };
 
-draw(character);
+draw();

@@ -42,16 +42,16 @@ const draw = function(char) {
     for (j = 0; j <= height; j++) {
       if (i == char.y && j == char.x) {
         content = content + '@';
-      } else if (i == 0 && j == height) {
-        content = content + '#<br>';
       } else if (i == 0 || j == 0 ) {
         content = content + '#';
-      } else if (i == width) {
+      } else if (i == width || j == height) {
         content = content + '#';
-      } else if (j == height) {
-        content = content + '#<br>';
       } else {
         content = content + '.';
+      }
+
+      if (j == height) {
+        content = content + '<br>';
       }
     }
   }
